@@ -141,7 +141,7 @@ public class RobotController extends JFrame {
 		RobotMotionAdapter motion = new RobotMotionAdapter(model);
 		RobotThread t = new RobotThread(motion, instructions);
 		t.start();
-
+		
 		
 	}
 
