@@ -44,46 +44,62 @@ public class Filters {
 	 *the first source image to the target panel.  
 	 *(Hint: This is a very simple method.)**/
 	public static int copy(int pixelComponent) {
-		return 0;  // FIXME
+		return pixelComponent;  // FIXME
 	}
 
 	//This method averages the color components of two pixels.
 	// USED IN: composite
 	public static int composite(int a, int b) {
-		return 0;  // FIXME
+		int c=(a+b)/2;
+		return c;  // FIXME
 	}
 
 	//This method returns the negative of a pixel by inverting its color components.
 	// USED IN: negative
 	public static int negative(int a) {
-		return 0;  // FIXME
+		int b=255-a;
+		return b;  // FIXME
 	}
 
 	//This method reduces the number of possible values for a given color component
 	//from 256 to 2, by returning either 0 or 255 based on the original value.
 	// USED IN: posterize
 	public static int posterize(int a) {
-		return 0;   // FIXME
+		int b=a/128;
+		int c=(b==1)? 255:0;
+		return c;   // FIXME
 	}
 
 	//This method returns a color that is brighter than the original color.
 	// USED IN: brighter
 	//FIX ME
 	public static Color brighter(Color c) {
-		return Color.black;  // FIXME
+		Color d=c.brighter();
+		return d;  // FIXME
 	}
 
 	//This method returns a color that is some shade of gray, by making a new
 	//color having equal RGB components. returns an array of integers [r, g ,b].
 	// USED IN: grayscale
 	public static Color grayscale(Color c) {
-		return Color.black;  // FIXME
+		int red = c.getRed();
+		int green = c.getGreen();
+		int blue = c.getBlue();
+		int gray=(red+green+blue)/3;
+		Color d=new Color(gray,gray,gray);
+		return d;  // FIXME
 	}
 
 	//This method returns either black or white, based on the intensity of the
 	//originally provided color. returns an array of integers [r, g ,b].
 	// USED IN: blackWhite
 	public static Color blackAndWhite(Color c) {
+		int red = c.getRed();
+		int green = c.getGreen();
+		int blue = c.getBlue();
+		if ((red+green+blue)<255)
+			return Color.WHITE;
+		else
 		return Color.black;   // FIXME
 	}
 
@@ -91,7 +107,17 @@ public class Filters {
 	//pixel in the same location from the two source images.
 	// USED IN: combineBrighter
 	public static Color combineBrighter(Color c1, Color c2) {
-		return Color.black;  // FIXME
+		int red1 = c1.getRed();
+		int green1 = c1.getGreen();
+		int blue1 = c1.getBlue();
+		int red2 = c2.getRed();
+		int green2 = c2.getGreen();
+		int blue2 = c2.getBlue();
+		if ((red1+green1+blue1)>=(red2+green2+blue2))
+			return c1;
+		else
+		    return c2;
+		// FIXME
 
 
 	}
