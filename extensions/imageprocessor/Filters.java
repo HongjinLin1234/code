@@ -30,7 +30,10 @@ public class Filters {
 	// This method takes the color of each pixel and creates a new color without any green.  Returns an array of integers [r, g ,b].
 	// USED IN: example_purplish
 	public static Color purplish(Color c) {
-		return Color.black;  // FIXME
+		int red = c.getRed(); 
+		int blue = c.getBlue();
+		Color d = new Color(red,0,blue);
+		return d;  // FIXME
 	}
 
 	// Now that you've seen the examples, complete the following methods.
