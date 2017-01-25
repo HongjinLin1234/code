@@ -6,6 +6,8 @@ public class Heads {
 
 	public static void main(String[] args) {
 
+		
+		for(int i=0;i<=100;i++){
 		// what are the concepts?
 		int numHeads = 0;
 		int numFlips = 0;
@@ -22,7 +24,7 @@ public class Heads {
 		// here, numHeads should be 10
 		
 		System.out.println("Number of flips was " + numFlips);
-
+		}
 	}
 
 }

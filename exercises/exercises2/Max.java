@@ -1,12 +1,27 @@
 package exercises2;
 
+import cse131.ArgsProcessor;
+
 public class Max {
 
 	public static void main(String[] args) {
 		//
 		// Below, prompt the user for two ints, x and y
 		//
+		ArgsProcessor ap=new ArgsProcessor(args);
+		int x=ap.nextInt("int x");
+		int y=ap.nextInt("int y");
+		int max=0;
 		
+		if(x>y){
+			max=x;
+		}
+		else{
+			max=y;
+		}
+		
+		
+		System.out.println("Max of "+x+" and "+y+" is "+max);
 		
 		
 		

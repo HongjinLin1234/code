@@ -9,10 +9,12 @@ public class BadSwap {
 		
 		int x = ap.nextInt("Enter x");
 		int y = ap.nextInt("Enter y");
+		int t;
 		
 		if (x > y) {
+			t = x;
 			x = y;     // Bad
-			y = x;     // swap!!
+			y = t;     // swap!!
 		}
 		
 		System.out.println("x and y are now"
