@@ -9,7 +9,10 @@ public class Nim {
 		int Left=Total;
 		int i=0;
 		int Computertook=(int)Math.round(Math.random()+1);
+		if (Total<=0){System.out.println("Wrong information given,Game over");}
+		else{
 		int Firstornot=ap.nextInt("Are you want to be the first to play?(1:Yes)(2:No)");
+		
 		if(Firstornot==1){
 			System.out.println("Human Starts");
 			while(Left>0)
@@ -83,7 +86,7 @@ public class Nim {
 	}
 }
 }
-		
+}	
 		
 		
 
