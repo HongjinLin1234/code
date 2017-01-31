@@ -37,11 +37,11 @@ public class RPS {
 				Player1=Math.round(Math.random()*3);
 				Player2=3;
 				if(Player1<=1){System.out.println("Round "+i+" Player1: Rock, Player 2: Scissors, 1 win");
-				P1Win=P1Win+1;i=i+1;}
+				P1Win=P1Win+1;}
 				else if((Player1<=2)&&(Player1>1)){System.out.println("Round "+i+" Player1: Paper, Player 2: Scissors, 2 win");
-				P2Win=P2Win+1;i=i+1;}
+				P2Win=P2Win+1;}
 				else{System.out.println("Round "+i+" Player1: Scissors, Player 2: Scissors, tights");
-				tight=tight+1;i=i+1;}
+				tight=tight+1;}
 			}
 			System.out.println(Times+" times of simulation.");
 			System.out.println("P1 win: "+P1Win);
