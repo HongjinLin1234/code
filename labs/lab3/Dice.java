@@ -43,34 +43,37 @@ public class Dice {
 		int t=0;
 		int c[]=new int[T];
 		int d[]=new int[T];
+		System.out.println();
 		for(int k=0;k<=T-2;k++){
 			for(int l=k+1;l<=T-1;l++){
 			if(b[k]>b[l]){t=b[k];b[k]=b[l];b[l]=t;}
 			
 		}}
+		System.out.print("All sums: ");
 		for(int k=0;k<=T-1;k++){
 		System.out.print(b[k]+" ");}
 		System.out.println();
 		t=0;
 		for(int k=0;k<=T-2;k++){
+			count=1;
 			for(int l=k+1;l<=T-1;l++){
-				count=1;
 				if(b[k]==b[l]){count=count+1;k=l;}}
-				c[t]=b[k];
+			    c[t]=b[k];
 				d[t]=count;
 				t=t+1;}
-		if(b[T-1]==b[T-2]){d[t]=count+1;t=t+1;}
-		else{c[t]=b[T-1];d[t]=1;t=t+1;}
+		if(b[T-1]==b[T-2]){d[t]=count+1;t=t-1;}
+		else{c[t]=b[T-1];d[t]=1;}
 				
 			
 			
-		
-		for(int k=0;k<=t-1;k++){
+		System.out.print("How many different sums: ");
+		for(int k=0;k<=t;k++){
 			System.out.print(c[k]+" ");}
 		System.out.println();
-		for(int k=0;k<=t-1;k++){
+		System.out.print("Number of times Sum was seen: ");
+		for(int k=0;k<=t;k++){
 			System.out.print(d[k]+" ");}
-		
+		System.out.println();
 		System.out.println("the possibility of same value: "+df2.format(P));
 		
 		}
