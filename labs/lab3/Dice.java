@@ -23,6 +23,7 @@ public class Dice {
 		System.out.println();
 		double notsame=0;
 		int sum=0;
+		DecimalFormat df1 = new DecimalFormat("#");
 		DecimalFormat df2 = new DecimalFormat("#.00");
 		for(int j=1;j<=T;j++){
 			sum=0;
@@ -38,7 +39,7 @@ public class Dice {
 			
 			System.out.println();
 		}
-		double P=(double)(1-notsame/T);
+		double P=(double)((1-notsame/T)*100);
 		int count=1;
 		int t=0;
 		int c[]=new int[T];
@@ -73,8 +74,18 @@ public class Dice {
 		System.out.print("Number of times Sum was seen: ");
 		for(int k=0;k<=t;k++){
 			System.out.print(d[k]+" ");}
+		sum=0;
+		for(int k=0;k<=t;k++){
+			sum=sum+d[k];
+		}
 		System.out.println();
-		System.out.println("the possibility of same value: "+df2.format(P));
+		System.out.print("Percentage: ");
+		for(int k=0;k<=t;k++){
+			double Percent=(double)d[k]/sum*100;
+			System.out.print(df1.format(Percent)+"% ");
+		}
+		System.out.println();
+		System.out.println("the possibility of same value: "+df1.format(P)+"%");
 		
 		}
 	}
