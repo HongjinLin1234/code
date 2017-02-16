@@ -5,6 +5,17 @@ import sedgewick.StdDraw;
 public class WaitPoint {
 
 	public static void main(String[] args) {
+		while(!StdDraw.mousePressed()){StdDraw.pause(100);}
+			System.out.println("pressed");
+		
+		while(StdDraw.mousePressed()){StdDraw.pause(100);}
+		    StdDraw.setPenRadius(0.01);
+			StdDraw.point(StdDraw.mouseX(),StdDraw.mouseY());
+			char gotkey=' ';
+			while(gotkey!='q'){
+			while(!StdDraw.hasNextKeyTyped()){StdDraw.pause(100);}
+			gotkey=StdDraw.nextKeyTyped();
+			}
 		// wait for the mouse to be pressed and released
 
 		// here, the mouse has been pressed

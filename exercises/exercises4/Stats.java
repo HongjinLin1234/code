@@ -17,7 +17,22 @@ public class Stats {
 		//  count is the number of doubles read from the file
 		//  The other statistics should be clear from their names
 		//
-
+		double sum=0;
+		int count=0;
+		double max=Double.MIN_VALUE;
+		double min=Double.MAX_VALUE;
+        while (!StdIn.isEmpty()){
+        	double d=StdIn.readDouble();
+        	sum=sum+d;
+        	count=count+1;
+        	if(d>max){max=d;}
+        	if(d<min){min=d;}
+        }
+        System.out.println("sum is "+sum);
+        System.out.println("count is "+count);
+        System.out.println("average is "+(sum/count));
+        System.out.println("min is "+min);
+        System.out.println("max is "+max);
 	}
 
 }
