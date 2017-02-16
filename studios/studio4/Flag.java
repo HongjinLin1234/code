@@ -35,14 +35,14 @@ public class Flag {
 		StdDraw.text(i, 1-i, "Israel");
 		StdDraw.show(1000);
 		}
-		while(true){
+		
 		System.setIn(new FileInputStream("music/National_Anthem.txt"));
 
         // repeat as long as there are more integers to read in
         while (!StdIn.isEmpty()) {
-
             // read in the pitch, where 0 = Concert A (A4)
-            int pitch = StdIn.readInt();
+        	
+           int pitch = StdIn.readInt();
 
             // read in duration in seconds
             double duration = StdIn.readDouble();
@@ -63,7 +63,7 @@ public class Flag {
 }
             
            }
-}
+
 
 			
         
