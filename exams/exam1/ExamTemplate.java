@@ -3,15 +3,32 @@ public class ExamTemplate {
 	
 	public static int[] question1() {
 		// feel free to modify the declaration of answer as necessary
-		int[] answer = new int[0];
-	
+		int[] answer = new int[50];
+	    answer[0]=3;
+	    answer[1]=0;
+	    answer[2]=2;
+	    for(int i=3;i<=49;i++){
+	    	answer[i]=answer[i-2]+answer[i-3];
+	    }
+	    		
 		// don't change the return statement
 		return answer;
 	}
 	
 	public static boolean[] question2() {
 		// feel free to modify the declaration of answer as necessary
-		boolean[] answer = new boolean[0];
+		boolean[] answer = new boolean[50];
+		answer[0]=false;
+		answer[1]=true;
+				answer[2]=true;
+		for(int i=3;i<=49;i++ ){
+			answer[i]=true;
+			for(int j=2;j<=i-1;j++){
+				if(i%j==0){
+					answer[i]=false;
+				}
+			}
+		}
 
 		// don't change the return statement
 		return answer;
@@ -23,6 +40,14 @@ public class ExamTemplate {
 		
 		// you may want to use your answer from question 1 in answering this question
 		int[] question1Answer = question1();
+		int sum=0;
+		for(answer=0;answer<=49;answer++){
+			sum=sum+question1Answer[answer];
+			if(sum>1000){
+				break;
+			}
+		}
+		answer=answer+1;
 		
 		// don't change the return statement
 		return answer;
@@ -30,12 +55,21 @@ public class ExamTemplate {
 	
 	public static String[] question4() {
 		// feel free to modify the declaration of answer as necessary
-		String[] answer = new String[0];
+		String[] answer = new String[50];
 		
 		// you may want to use your answer from questions 1 and 2 in answering this question
 		int[] question1Answer = question1();
 		boolean[] question2Answer = question2();
-		
+		for(int i=0;i<=49;i++){
+			if(question2Answer[i]==true){
+				answer[i]=i+" is PRIME: "+question1Answer[i]+"%"+i+"=0";
+			}
+		}
+			for(int j=0;j<=49;j++){
+				if(question2Answer[j]==false){
+					answer[j]=j+" is NONPRIME";
+				}
+		}
 		// don't change the return statement
 		return answer;
 	}
