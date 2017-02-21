@@ -77,9 +77,9 @@ public class PlayThatTune {
         StdDraw.setPenColor(Color.black);
         double y=0;
         for(int i=0;i<=factors-1;i++){
-        for(double x=0.001;x<1;x=x+0.004){
+        for(double x=0.001;x<1;x=x+0.01){
         	y=RS[i]*Math.sin(2 * Math.PI * x*((double)Num[i]/Deno[i]));
-        	StdDraw.filledCircle(x, y, 0.005);
+        	StdDraw.filledCircle(x, y, 0.01);
         }
         }
         StdDraw.setPenColor(Color.red);
