@@ -46,5 +46,9 @@ public class MethodsTest {
 	public void testAverage() {
 		assertEquals(0.5, Methods.average(new double[] { 0, 1 }), 0.1);
 	}
+	@Test
+	public void testdivision() {
+		assertEquals(2.5, Methods.division(5,2),0.1);
+	}
 
 }

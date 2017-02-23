@@ -19,8 +19,42 @@ public class Methods {
 	 * @return the product of the factors
 	 */
 	public static int mpy(int x, int y) {
-		return 0;  // FIXME
+		return 1;  // FIXME
 	}
-
-
+	/**
+	 * 
+	 * @param x one factor
+	 * @param y another factor
+	 * @param z the last factor
+	 * @param sum the sum of 3 factors
+	 * @param avg the average of 3 factors
+	 * @return the average of the factors
+	 */
+	public static double avg3(int x,int y,int z){
+        int sum=x+y+z;
+        double avg=sum/3.0;
+        return avg;
 }
+    public static double sumArray(double array[]){
+    	double sum=0;
+    	for(int i=0;i<array.length;i++){
+    		sum=sum+array[i];
+    	}
+    	return sum;
+    }
+    public static double average(double array[]){
+    	double sum=sumArray(array);
+    	double average=sum/(double)array.length;
+    	return average;
+    }
+    public static double division(int x,int y){
+    	double d=(double)x/(double)y;
+    	return d;
+    }
+    public static String pig(String s){
+    	String s1="";
+    	s1=s.substring(1)+s.substring(0,1)+"ay";
+    	return s1;
+    }
+}
+
