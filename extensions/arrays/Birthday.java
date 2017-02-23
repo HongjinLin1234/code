@@ -46,7 +46,7 @@ public class Birthday {
 		  daysum=daysum+day[b];
 		}
 		double averageday=(double)Math.round(daysum/31*100)/100;
-		System.out.println("the average of 12 values is "+averageday+"%");
+		System.out.println("the average of 31 values is "+averageday+"%");
 	    System.out.println();
 	    int g=0;
 	    for(int b=1;b<=12;b++){
