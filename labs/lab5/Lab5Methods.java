@@ -34,6 +34,27 @@ public class Lab5Methods {
     	}
     	return sum;
     }
-    public static 
+    public static int  mult (int j,int k){
+    	int m=Math.abs(j);
+    	int n=Math.abs(k);
+    	int sum1=multPos(m,n);
+    	
+    	if((j<0)&&(k>0)){sum1=-sum1;}
+    	else if((j>0)&&(k<0)){sum1=-sum1;}
+    	
+    	return sum1;
+    	
+    }
+    public static int expt (int n,int k){
+    	int exp=1;
+    	if(k==0){exp=1;}
+    	else{
+    		for(int i=1;i<=k;i++){
+    			exp=exp*n;
+    		}
+    	}
+    	return exp;
+    	
+    }
 
 }
