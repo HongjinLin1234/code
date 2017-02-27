@@ -13,10 +13,16 @@ public class GraphPaper {
 	 * @param size length and height of the current square
 	 */
 	public static void gp(double llx, double lly, double size) {
-		// base case, stop when the size is sufficiently small
 		if (size < .05) {
-			return;  // abandon recursion
-		}
+			return;}  // abandon recursion
+		// base case, stop when the size is sufficiently small
+		StdDraw.setPenColor(Color.red);
+		StdDraw.line(llx, lly+size/2, llx+size, lly+size/2);
+		StdDraw.line(llx+size/2, lly+size, llx+size/2, lly);
+		gp(llx,lly,size/2);
+		gp(llx,lly+size/2,size/2);
+		gp(llx+size/2,lly+size/2,size/2);
+		gp(llx+size/2,lly,size/2);
 		// draw one horizontal and one vertical line to quadrisect
 		//  the square (divide into 4 portions). Your code goes
 		//  below here:
@@ -26,7 +32,7 @@ public class GraphPaper {
 		// Now, after you have drown athose two lines,
 		// let's pause to accentuate the recursive drama
 		//
-		StdDraw.pause(500);
+		//StdDraw.pause(500);
 		//
 		//
 		// Now recursively consider the
@@ -45,9 +51,9 @@ public class GraphPaper {
 		//   calls below to StdDraw.show
 		//   and that will speed up what you see greatly
 		//
-		// StdDraw.show(10);  // don't show anything
+		StdDraw.show(10);  // don't show anything
 		gp(0, 0, 1);
-		// StdDraw.show(10);  // until now
+		StdDraw.show(10);  // until now
 
 	}
 
