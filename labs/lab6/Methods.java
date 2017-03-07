@@ -5,6 +5,11 @@ public class Methods {
 	//
 	// In this class, implement the f and g functions described on the lab page
 	//
+	/**
+	 * 
+	 * @param x one factor
+	 * @return f f(x)
+	 */
 	public static int f(int x){
 		if (x > 100){
 			return x-10;
@@ -14,6 +19,12 @@ public class Methods {
 		}
 	      
 	}
+	/**
+	 * 
+	 * @param x one factor
+	 * @param y another factor
+	 * @return g g(x,y)
+	 */
 	public static int g(int x,int y){
 		if(x==0){
 			return y+1;

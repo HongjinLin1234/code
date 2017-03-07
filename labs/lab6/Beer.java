@@ -1,6 +1,11 @@
 package lab6;
 
 public class Beer {
+	/**
+	 * 
+	 * @param n number of bottles
+	 * @return s the string of n bottles
+	 */
 	public static String bottlesOfBeer(int n){
 		String s="";
 		s="\n"+n+" bottles of beer on the wall, "+n+" bottles of beer; you take one down, pass it around, "+(n-1)+" bottles of beer on the wall.";

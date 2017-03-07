@@ -6,6 +6,12 @@ import sedgewick.StdDraw;
 
 
 public class Triangles {
+	/**
+	 * 
+	 * @param a the x parameter of lowest points of triangles
+	 * @param b the y parameter of lowest points of triangles
+	 * @return size the length of triangles
+	 */
 	public static void t(double a,double b,double size){
 		StdDraw.setPenColor(Color.white);
 		if (size < .02) {
