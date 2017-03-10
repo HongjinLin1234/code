@@ -24,6 +24,17 @@ public class PersianRug {
 		//
 		// FIXME Your code goes here
 		//
+		if (size < .01) {
+			return;} 
+		StdDraw.setPenColor(palette[9]);
+		StdDraw.line(llx, lly+size/2, llx+size, lly+size/2);
+		StdDraw.line(llx+size/2, lly+size, llx+size/2, lly);
+		StdDraw.setPenColor(palette[north]);
+		
+		persianRug(palette,llx,lly,size/2,north,east,south,west);
+		persianRug(palette,llx,lly+size/2,size/2,north,east,south,west);
+		persianRug(palette,llx+size/2,lly+size/2,size/2,north,east,south,west);
+		persianRug(palette,llx+size/2,lly,size/2,north,east,south,west);
 	}
 
 	public static void main(String args[]) {

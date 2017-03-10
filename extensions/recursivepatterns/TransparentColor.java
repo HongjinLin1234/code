@@ -21,7 +21,13 @@ public class TransparentColor {
 	 * @return a Color object of the same RGB value as supplied, but with the alpha value applied.
 	 */
 	public static Color transparentColor(Color c, int alpha) {
-		return c;   // FIXME
+		int red = c.getRed(); 
+		int green = c.getGreen();
+		int blue = c.getBlue();
+		Color d=new Color(red,green,blue,alpha);
+		
+		
+		return d;   // FIXME
 	}
 
 

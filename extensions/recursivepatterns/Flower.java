@@ -19,6 +19,16 @@ public class Flower {
 		//
 		// FIXME Your code below here
 		//
+		if (count > 4) {
+			return;} 
+		StdDraw.setPenColor(palette[(int)Math.round(12*Math.random())]);
+		StdDraw.filledEllipse(x, y, halfWidth, halfHeight);
+		count=count+1;
+		flower(palette,x,y-halfHeight/2,halfWidth/2,halfHeight/2,count);
+		flower(palette,x,y+halfHeight/2,halfWidth/2,halfHeight/2,count);
+		flower(palette,x-halfWidth/2,y,halfWidth/2,halfHeight/2,count);
+		flower(palette,x+halfWidth/2,y,halfWidth/2,halfHeight/2,count);
+		
 	}
 	
 		
