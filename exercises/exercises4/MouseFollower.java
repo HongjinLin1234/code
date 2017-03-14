@@ -32,9 +32,9 @@ public class MouseFollower {
 			//
 			// Stdraw.show(..) achieves double buffering and
 			//   avoids the tight spinning loop
-			StdDraw.show(10);
+            StdDraw.show(10);
 		}
-
+     
 	}
 
 }
