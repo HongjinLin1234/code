@@ -1,6 +1,7 @@
 package cse131;
 
 public class Exam21 {
+	//The method of iteration 
 	public static int[] reverse(int[] array){
 		int t=0;
 		for(int i=0;i<array.length/2;i++){
@@ -10,6 +11,7 @@ public class Exam21 {
 		}
 		return array;
 	}
+	//The method of recursion
 	public static int[] reverse1(int[] a){
 	    int index=0;
 	    return reversehelper(a,index);
@@ -24,10 +26,12 @@ public class Exam21 {
 		a[a.length-1-index]=t;
 		return reversehelper(a,index+1);
 	}
+	//The method of determining the digit of a number
 	public static int numDigits(int x){
 		if(x<10){return 1;}
 		return numDigits(x/10)+1;
 	}
+	//implement
 	public static void main(String[] args) {
 	int a[]={1,2,3,4,5};
 	reverse1(a);
