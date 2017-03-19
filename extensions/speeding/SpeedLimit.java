@@ -15,7 +15,7 @@ public class SpeedLimit {
 			
 		
 		
-		int TotalFine=((Overspeed>= 10)||(Overspeed<0)) ? b : 50;
+		int TotalFine=((Overspeed>= 10)||(Overspeed<=0)) ? b : 50;
 		System.out.println("You reported a speed of "+speed+" MPH for a speed limit of 60 MPH");
 		System.out.println("You went "+a+" MPH over the speed limit. Your fine is $"+TotalFine);
 	}
