@@ -40,8 +40,8 @@ public class PersianRug {
 	public static void main(String args[]) {
 		//
 		// Leave the following line commented out, but once you
-		//   have things working, uncomment it, and also uncomment
-		//   the similar line at the end of this method.
+		// have things working, uncomment it, and also uncomment
+		// the similar line at the end of this method.
 		// Uncommenting those lines will run the graphics code
 		//   in double-buffering mode, so that your image will appear
 		//   almost instantaneously, instead of being drawn one line
