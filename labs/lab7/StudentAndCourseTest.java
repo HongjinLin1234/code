@@ -79,7 +79,7 @@ public class StudentAndCourseTest extends TestCase {
 			assertTrue("GPA not rounded", (s.getGPA() + "").length() < 6);
 		}
 	}
-
+	
 	@Test
 	public void testCreateLegacy() {
 		for(int i = 0; i < 100; i++) {
