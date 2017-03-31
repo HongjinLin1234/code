@@ -14,7 +14,7 @@ public class Polynomial {
 		//
 		// Set the instance variable (list) to be a new linked list of Double type
 		//
-		list = null;   // FIXME
+		this.list=new LinkedList<Double>();// FIXME
 	}
 
 	public String toString() {
@@ -25,15 +25,25 @@ public class Polynomial {
 		//
 		// FIXME
 		//
+		this.list.add(coeff);
 		return this;  // required by lab spec
 	}
 
 	public double evaluate(double x) {
-		return Math.random();  // FIXME
+		int i=0;
+		return evaluatehelper(x,i);
 	}
-	
+	private double evaluatehelper(double x,int i){
+		if(i==(list.size()-1)){return (list.get(i));}
+		else{return list.get(i)+x*evaluatehelper(x,i+1);}
+	}
 	public Polynomial derivative() {
-		return null;   // FIXME
+		int t=list.size()-1;
+		for(int i=1;i<=list.size()-1;i++){
+            this.list.add(i-1,list.get(i)*i);
+		}
+		
+		return this;
 	}
 	
 	public Polynomial sum(Polynomial another) {
@@ -89,5 +99,12 @@ public class Polynomial {
 
 		return this.list.equals(other.list);
 	}
-
+	public static void main(String[] args) {
+		 Polynomial foo = new Polynomial();
+		 foo.addTerm(7);
+		 foo.addTerm(5);
+		 foo.addTerm(-2);
+		 foo.addTerm(5);
+		 System.out.println(foo.evaluate(100));
+	}
 }
