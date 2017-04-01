@@ -2,6 +2,7 @@ package lab8;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Polynomial {
 
@@ -14,11 +15,25 @@ public class Polynomial {
 		//
 		// Set the instance variable (list) to be a new linked list of Double type
 		//
-		this.list=new LinkedList<Double>();// FIXME
+		this.list=new LinkedList<Double>();
+		
+		// FIXME
 	}
 
 	public String toString() {
-		return "A polynomial"; // FIXME
+		int I=list.size();
+		if(I>0){
+		String s[]=new String[list.size()];
+		String k="";
+		for(int i=0;i<=list.size()-2;i++){
+			s[i]=list.get(i)+"x^"+i+"+";
+		}
+		s[list.size()-1]=list.get(list.size()-1)+"x^"+(list.size()-1);
+		for(int i=0;i<=list.size()-1;i++){
+			k=k+s[i];
+		}
+		return k;}
+		else{return "0";}
 	}
 
 	public Polynomial addTerm(double coeff) {
@@ -34,20 +49,44 @@ public class Polynomial {
 		return evaluatehelper(x,i);
 	}
 	private double evaluatehelper(double x,int i){
+		int I=list.size();
+		if(I>0){
 		if(i==(list.size()-1)){return (list.get(i));}
-		else{return list.get(i)+x*evaluatehelper(x,i+1);}
+		else{return list.get(i)+x*evaluatehelper(x,i+1);}}
+		else{return 0;}
 	}
 	public Polynomial derivative() {
-		int t=list.size()-1;
-		for(int i=1;i<=list.size()-1;i++){
-            this.list.add(i-1,list.get(i)*i);
+		int I=list.size();
+		Polynomial f=new Polynomial();
+		if(I>0){
+		double t[]=new double[list.size()-1];
+		for(int i=0;i<=list.size()-2;i++){
+            t[i]=(list.get(i+1))*(i+1);
+		}
+		for(int i=0;i<=list.size()-2;i++){
+		f.addTerm(t[i]);
 		}
 		
-		return this;
+		return f;}
+		else
+		{return this;}
 	}
 	
 	public Polynomial sum(Polynomial another) {
-		return null;   // FIXME
+		int I=list.size();
+		if(I>0){
+			Polynomial f=new Polynomial();
+		double t[]=new double[Math.max(this.list.size(), another.list.size())];
+		for(int i=0;i<=Math.max(this.list.size()-1, another.list.size()-1);i++){
+		 if((i<=this.list.size()-1)&&(i<=another.list.size()-1)){t[i]=another.list.get(i)+this.list.get(i);}
+		 else if((i<=this.list.size()-1)&&(i>another.list.size()-1)){t[i]=this.list.get(i);}
+		 else if((i<=another.list.size()-1)&&(i>this.list.size()-1)){t[i]=another.list.get(i);}
+		 f.addTerm(t[i]);
+	}
+		return f;
+	}
+		else
+		{return another;}
 	}
 
 	/**
@@ -101,10 +140,17 @@ public class Polynomial {
 	}
 	public static void main(String[] args) {
 		 Polynomial foo = new Polynomial();
-		 foo.addTerm(7);
-		 foo.addTerm(5);
-		 foo.addTerm(-2);
-		 foo.addTerm(5);
-		 System.out.println(foo.evaluate(100));
+		 foo.addTerm(4);
+		 foo.addTerm(-7);
+		 foo.addTerm(0);
+		 foo.addTerm(11);
+		 Polynomial fo = new Polynomial();
+		 fo.addTerm(-1);
+		 fo.addTerm(2);
+		 fo.addTerm(3);
+		 fo.addTerm(-4);
+		 fo.addTerm(5);
+		 System.out.println(foo.evaluate(2.0));
+		 System.out.println(fo.sum(foo));
 	}
 }
