@@ -19,7 +19,9 @@ public class Polynomial {
 		
 		// FIXME
 	}
-
+    /**
+     * create the string type of the polynomial
+     */
 	public String toString() {
 		int I=list.size();
 		if(I>0){
@@ -35,7 +37,11 @@ public class Polynomial {
 		return k;}
 		else{return "0";}
 	}
-
+    /**
+     * 
+     * @param coeff
+     * @return  the polynomial after term adding
+     */
 	public Polynomial addTerm(double coeff) {
 		//
 		// FIXME
@@ -43,11 +49,21 @@ public class Polynomial {
 		this.list.add(coeff);
 		return this;  // required by lab spec
 	}
-
+    /**
+     * 
+     * @param x
+     * @return  evaluatehelper of order i
+     */
 	public double evaluate(double x) {
 		int i=0;
 		return evaluatehelper(x,i);
 	}
+	/**
+	 * 
+	 * @param x
+	 * @param i
+	 * @return the evaluate value of order i
+	 */
 	private double evaluatehelper(double x,int i){
 		int I=list.size();
 		if(I>0){
@@ -55,6 +71,10 @@ public class Polynomial {
 		else{return list.get(i)+x*evaluatehelper(x,i+1);}}
 		else{return 0;}
 	}
+	/**
+	 * 
+	 * @return the derivative of polynomial
+	 */
 	public Polynomial derivative() {
 		int I=list.size();
 		Polynomial f=new Polynomial();
@@ -73,7 +93,11 @@ public class Polynomial {
 		else
 		{return this;}
 	}
-	
+	/**
+	 * 
+	 * @param another
+	 * @return the sum of polynomial and another
+	 */
 	public Polynomial sum(Polynomial another) {
 		int I=list.size();
 		if(I>0){
@@ -140,6 +164,10 @@ public class Polynomial {
 
 		return this.list.equals(other.list);
 	}
+	/**
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		 Polynomial foo = new Polynomial();
 		 foo.addTerm(4);
