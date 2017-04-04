@@ -67,6 +67,8 @@ public class Polynomial {
 		f.addTerm(t[i]);
 		}
 		
+		
+		
 		return f;}
 		else
 		{return this;}
