@@ -83,7 +83,7 @@ public class SinglyLinkedListWithSentinel implements IntList {
 				//
 				p.setNext(p.getNext().getNext());
 				return true;
-			}
+			} 
 		}
 		return false;
 	}
