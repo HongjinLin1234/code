@@ -79,7 +79,7 @@ public class DoublyLinkedListOfInts implements IntList{
 				ListItem q=p.getNext();
 				ListItem o=p.getPrev();
 				o.setNext(q);
-				q.setPrev(o);
+				q.setPrev(o); 
 				return true;
 			}
 		}
