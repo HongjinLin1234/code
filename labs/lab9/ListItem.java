@@ -15,10 +15,12 @@ public class ListItem {
 	 * @param number the value to be held in the item
 	 * @param next a reference to the next item in the list
 	 */
-	ListItem(int number, ListItem next) {
+	ListItem (int number, ListItem next) {
 		this.number = number;
 		this.next   = next;
 	}
+     
+	
 
 	/**
 	 * Return a copy of this list using recursion.  No
@@ -27,6 +29,8 @@ public class ListItem {
 	 * @return
 	 */
 	public ListItem duplicate() {
+		ListItem p=new ListItem(this.number,this.next);
+		if(this.next==null){p.number=this.number; return p;}
 		return null; // FIXME
 	}
 
