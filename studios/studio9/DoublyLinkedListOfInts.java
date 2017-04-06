@@ -84,7 +84,7 @@ public class DoublyLinkedListOfInts implements IntList{
 			}
 		}
 		return false;
-	}
+	}  
 
 	@Override
 	public boolean isEmpty() {
