@@ -102,7 +102,7 @@ public class DoublyLinkedListOfInts implements IntList{
 		DoublyLinkedListOfInts p=new DoublyLinkedListOfInts();
 		p.addFirst(7);
 		p.addFirst(6);
-		p.addFirst(15);
+		p.addFirst(15); 
 		p.addLast(16);
 		System.out.println(p);
 		System.out.println(p.reverse());
