@@ -14,7 +14,7 @@ public class SinglyLinkedListWithSentinel implements IntList {
 		// The 666666 value is there because we have to specify some int
 		// It plays the role of the "Joker" card I used at the beginning of
 		//    this studio
-		ListItem sentinel = new ListItem(666666, null);
+		ListItem sentinel = new ListItem(666666, null,null);
 		
 		this.head = sentinel;
 	}
@@ -22,7 +22,7 @@ public class SinglyLinkedListWithSentinel implements IntList {
 	@Override
 	public void addFirst(int item) {
 		// no special case thanks to the sentinel
-		ListItem newbie = new ListItem(item, this.head.getNext());
+		ListItem newbie = new ListItem(item, this.head.getNext(),null);
 		this.head.setNext(newbie);
 	}
 
@@ -38,7 +38,7 @@ public class SinglyLinkedListWithSentinel implements IntList {
 		// p must point to a ListItem whose next is null, so it's the
 		//   last item in the list
 		
-		p.setNext(new ListItem(item,null));
+		p.setNext(new ListItem(item,null,null));
 
 	}
 

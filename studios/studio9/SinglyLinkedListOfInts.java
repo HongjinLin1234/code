@@ -22,7 +22,7 @@ public class SinglyLinkedListOfInts implements IntList {
 	@Override
 	public void addFirst(int item) {
 		// This unfortunately has a special case
-		ListItem node = new ListItem(item, null);
+		ListItem node = new ListItem(item, null,null);
 		
 		if (this.size()== 0) {
 			//   If the list is empty, just have head point to the
@@ -50,7 +50,7 @@ public class SinglyLinkedListOfInts implements IntList {
 			this.addFirst(item);
 			return;  // we are done
 		}
-		ListItem node = new ListItem(item, null);
+		ListItem node = new ListItem(item, null,null);
 		// Find the item whose next is null
 		// and insert after that item
 		ListItem p = this.head;
