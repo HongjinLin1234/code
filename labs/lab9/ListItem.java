@@ -53,7 +53,7 @@ public class ListItem {
 	 * @return
 	 */
 
-	public ListItem stretch(int n) {
+	public ListItem stretch(int n) { 
 		return null;  // FIXME
 	}
 
