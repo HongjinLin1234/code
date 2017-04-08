@@ -1,5 +1,6 @@
 package lab9;
 
+import studio9.ListItem;
 
 public class ListItem {
 	//
@@ -30,8 +31,10 @@ public class ListItem {
 	 */
 	public ListItem duplicate() {
 		ListItem p=new ListItem(this.number,this.next);
-		if(this.next==null){p.number=this.number; return p;}
-		return null; // FIXME
+		if(p.next!=null){return new ListItem(p.number,p.next.duplicate());}
+		else{return new ListItem(p.number,null);}
+		
+		// FIXME
 	}
 
 	/**
@@ -41,7 +44,9 @@ public class ListItem {
 	 * @return
 	 */
 	public int length() {
-		return 0; // FIXME
+		ListItem p=new ListItem(this.number,this.next);
+		if(p.next!=null){return 1+p.next.length();}
+		else{return 1;}
 	}
 
 	/**
@@ -54,7 +59,18 @@ public class ListItem {
 	 */
 
 	public ListItem stretch(int n) { 
-		return null;  // FIXME
+		ListItem q=new ListItem(this.number,this.next);
+		int k[]=new int [this.length()];
+		ListItem g[]=new ListItem[this.length()*n];
+		int i=0;
+				for(ListItem p= this; p!= null; p=p.next){
+					k[i]=p.number;
+					i=i+1;
+		}
+		 for(int j=0;j<=this.length()*n-1;j++){
+			 
+		}
+		return g;  // FIXME
 	}
 
 	/**
@@ -67,7 +83,10 @@ public class ListItem {
 	 */
 
 	public ListItem find(int n) {
-		return null;  // FIXME
+		for(ListItem p= this; p!= null; p=p.next){
+			if(p.number==n){return p;}
+		}
+		return null;
 	}
 
 	/**
@@ -79,7 +98,11 @@ public class ListItem {
 	 */
 
 	public int max() {
-		return 0; // FIXME
+		int max=this.number;
+		for(ListItem p= this; p!= null; p=p.next){
+			if(p.number>=max){max=p.number;}
+		}
+		return  max; // FIXME
 	}
 
 	/**
@@ -88,8 +111,14 @@ public class ListItem {
 	 * @param ls
 	 * @return
 	 */
+
 	public static ListItem evenElements(ListItem ls) {
-		return null;  // FIXME
+		if(ls==null){return null;}
+		else if((ls.next!=null)&&(ls.number%2==0)){return new ListItem(ls.number,evenElements(ls.next));}
+		else if((ls.next==null)&&(ls.number%2==0)){return new ListItem(ls.number,null);}
+		else if((ls.next!=null)&&(ls.number%2!=0)){return evenElements(ls.next);}
+		else{return null;}
+		
 	}	
 
 
@@ -105,5 +134,15 @@ public class ListItem {
 		else
 			return (number + " " + next); // calls next.toString() implicitly
 	}
-
+	public static void main(String[] args) {
+		ListItem k1=new ListItem(5,null);
+		ListItem k2=new ListItem(6,k1);
+		ListItem k3=new ListItem(7,k2);
+		ListItem k4=new ListItem(8,k3);
+		System.out.println(k4);
+		System.out.println(k4.length());
+		System.out.println(k4.duplicate());
+		System.out.println(k4.stretch(2));
+		System.out.println(evenElements(null));
+	}
 }
