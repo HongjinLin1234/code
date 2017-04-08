@@ -128,7 +128,7 @@ public class ListItem {
 	 * the linked structure.  Leave this method alone so our testing will work
 	 * properly.
 	 */
-	public String toString() {
+	public String toString() { 
 		if (next == null)
 			return ("" + number);
 		else
